@@ -17,8 +17,9 @@ namespace Arreglos
             array = new string[tamano];
             max = array.Length -1;
             tope = 0;
-           
+          
         }
+
         private bool ValidaVacio()
             //if (tope < 1)
             //{
@@ -32,9 +33,23 @@ namespace Arreglos
         {
             return (tope<1);
         }
+
         private bool ValidaLleno()
         {
             return (tope > max);
         }
+
+        public void Agregar(string dato)
+        {
+            if (ValidaLleno())
+            {
+                throw new Exception("El Arreglo esta Lleno");
+            }
+
+            array[tope] = dato;
+            tope++;
+        }
+
+  
     }
 }
