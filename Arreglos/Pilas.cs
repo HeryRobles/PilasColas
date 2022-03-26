@@ -56,6 +56,10 @@ namespace Arreglos
             {
                 throw new Exception("El Arreglo está Vacío");
             }
+
+            tope--;
+            array[tope] = null;
+
         }
     }
 }
