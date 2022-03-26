@@ -21,6 +21,55 @@ namespace Arreglos
             final = 0;
         }
 
-        
+        private bool ValidaVacio()
+        {
+            return ((principio < 1 && final < 1) || principio == final) ;
+        }
+
+        private bool ValidaLleno()
+        {
+            return (final > max);
+        }
+
+        public void Agregar(string dato)
+        {
+            if (ValidaLleno())
+            {
+                throw new Exception("El Arreglo está Lleno");
+            }
+            array[final] = dato;
+            final++;
+        }
+
+        public void Eliminar()
+        {
+            if (ValidaVacio())
+            {
+                throw new Exception("El Arreglo está Vacío");
+            }
+
+            array[principio] = null;
+            principio++;
+        }
+
+        public string Imprimir()
+        {
+            string datos = string.Empty;
+
+            if (ValidaVacio())
+            {
+                return "El arreglo está Vacío";
+            }
+
+            for (int i = principio; i < final; i++)
+            {
+                if (i > principio)
+                {
+                    datos += "\n";
+                }
+                datos += $"[{i}] - {array[i]}";
+            }
+            return datos;
+        }
     }
 }
