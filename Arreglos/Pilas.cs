@@ -50,6 +50,12 @@ namespace Arreglos
             tope++;
         }
 
-  
+        public void Elimiar()
+        {
+            if(ValidaVacio())
+            {
+                throw new Exception("El Arreglo está Vacío");
+            }
+        }
     }
 }
