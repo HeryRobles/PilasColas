@@ -14,7 +14,7 @@ namespace Listas
             lista = new List<string>();
         }
 
-        public void Agregar()
+        public void Agregar(string dato)
         {
             lista.Add(dato);
         }
@@ -31,8 +31,32 @@ namespace Listas
                 throw new Exception("La Lista está Vacía");
             }
 
-            lista.Remove(lista.Count - 1);
+            lista.RemoveAt(lista.Count - 1);
         }
         
+        public string Imprimmir()
+        {
+            string datos = string.Empty;
+
+            if (ValidaVacio())
+            {
+                return "La Lista está Vacía";           
+            }
+
+            int listCount = lista.Count;    
+
+            for (int i = 0; i < listCount; i++)
+            {
+                if (i>0)
+                {
+                    datos += "\n";
+                }
+
+                datos += $"[{i}] - {lista[i]}";
+            }
+
+            return datos;
+        }
+
     }
 }
