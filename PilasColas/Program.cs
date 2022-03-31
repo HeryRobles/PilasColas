@@ -4,8 +4,13 @@ using System;
 
 namespace PilasColas
 {
-    public static class Program
+    class Program
     {
+        static void Main(string[] args)
+        {
+            ListasPilas();
+            ListasColas();
+        }
         static void ArregloPilas()
         {
             try
